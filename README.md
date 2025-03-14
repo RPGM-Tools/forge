@@ -1,2 +1,2 @@
-# Muse
+# RPGM Forge
 AI generator tool for names, descriptions, character images, maps, plot hooks...

@@ -1,10 +1,8 @@
 {
-  "name": "@rpgm/muse",
-  "version": "0.1.0",
-  "main": "index.ts",
-  "license": "MIT",
-  "author": "dallenb4",
-  "description": "AI-Powered content generation for TTRPGS",
-  "dependencies": {
-  }
+	"name": "@rpgm/forge",
+	"version": "0.1.0",
+	"main": "index.ts",
+	"license": "MIT",
+	"author": "dallenb4",
+	"description": "AI-Powered content generation for TTRPGS"
 }

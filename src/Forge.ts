@@ -1,41 +1,33 @@
-import { NamesOptions, DescriptionOptions, ImageOptions } from "./Types"
 declare const __API_URL__: string
 
 const ERROR_TEXT = "An error occured while generating!"
 
-export type MuseError = string
-
-export type MuseResponse<T> =
+export type ForgeResponse<T> =
 	| { success: true, output: T }
 	| { success: false, error: string }
 
-export abstract class MuseObject<I, O> {
+export abstract class ForgeObject<I, O> {
 	input: I
 	output!: O
 	protected abstract validate(): string
-	abstract generate(): Promise<this | MuseError>
+	/**
+	 * Generates a ForgeResponse.
+	 * Upon successful generation, {output} will be updated
+	 * */
+	abstract generate(): Promise<ForgeResponse<O>>
 
 	constructor(input: I) {
 		this.input = input
 	}
 }
 
-export async function GenerateMuseObject(options: NamesOptions | DescriptionOptions | ImageOptions): Promise<MuseObject<any, any> | MuseError> {
-	if (options instanceof NamesOptions)
-		return await new MuseNames(options).generate()
-	else if (options instanceof DescriptionOptions)
-		return await new MuseDescription(options).generate()
-	else
-		return await new MuseImage(options).generate()
-}
-
-type Names = {
-	names: string[]
-}
-
-export class MuseNames extends MuseObject<NamesOptions, Names> {
-	constructor(input: NamesOptions) {
+export class ForgeNames extends ForgeObject<NamesOptions, Names> {
+	private constructor(input: NamesOptions) {
 		super(input)
+	}
+
+	static fromOptions(input: NamesOptions): ForgeNames {
+		return new ForgeNames(input)
 	}
 
 	protected validate(): string {
@@ -51,10 +43,10 @@ export class MuseNames extends MuseObject<NamesOptions, Names> {
 		return `Generate ${this.input.quantity} newline-separated random name(s) for a {${this.input.type}} in the {${this.input.genre}} genre.`
 	}
 
-	async generate(): Promise<this | MuseError> {
+	async generate(): Promise<ForgeResponse<Names>> {
 		const error = this.validate()
 		if (error) {
-			return error
+			return { success: false, error }
 		}
 
 		const data = {
@@ -62,36 +54,29 @@ export class MuseNames extends MuseObject<NamesOptions, Names> {
 		}
 
 		try {
-			const response = await fetch(__API_URL__ + "/muse/names", {
+			const response = await fetch(__API_URL__ + "/forge/names", {
 				method: "POST",
 				headers: { auth: localStorage.getItem("auth") ?? "", },
 				body: JSON.stringify(data),
 				signal: AbortSignal.timeout(10000)
 			})
-			const museResponse = await response.json() as MuseResponse<Names>
-			if (museResponse.success) {
-				this.output = museResponse.output
-				return this
-			} else {
-				return museResponse.error
-			}
+			const forgeResponse = await response.json() as ForgeResponse<Names>
+			if (forgeResponse.success)
+				this.output = forgeResponse.output
+			return forgeResponse
 		} catch (e) {
-			return ERROR_TEXT
+			return { success: false, error: ERROR_TEXT }
 		}
 	}
 }
 
-type Description = {
-	description: string
-}
-
-export class MuseDescription extends MuseObject<DescriptionOptions, Description> {
-	constructor(input: DescriptionOptions) {
+export class ForgeDescription extends ForgeObject<DescriptionOptions, Description> {
+	private constructor(input: DescriptionOptions) {
 		super(input)
 	}
 
-	static async create(options: DescriptionOptions): Promise<MuseDescription | MuseError> {
-		return await new MuseDescription(options).generate()
+	static fromOptions(input: DescriptionOptions): ForgeDescription {
+		return new ForgeDescription(input)
 	}
 
 	protected validate(): string {
@@ -125,10 +110,10 @@ export class MuseDescription extends MuseObject<DescriptionOptions, Description>
 		return prompt
 	}
 
-	async generate(): Promise<this | MuseError> {
+	async generate(): Promise<ForgeResponse<Description>> {
 		const error = this.validate()
 		if (error) {
-			return error
+			return { success: false, error }
 		}
 
 		const data = {
@@ -136,43 +121,19 @@ export class MuseDescription extends MuseObject<DescriptionOptions, Description>
 		}
 
 		try {
-			const response = await fetch(__API_URL__ + "/muse/description", {
+			const response = await fetch(__API_URL__ + "/forge/description", {
 				method: "POST",
 				headers: { auth: localStorage.getItem("auth") ?? "", },
 				body: JSON.stringify(data),
 				signal: AbortSignal.timeout(10000)
 			})
-			const museResponse = await response.json() as MuseResponse<Description>
-			if (museResponse.success) {
-				this.output = museResponse.output
-				return this
-			} else {
-				return museResponse.error
+			const forgeResponse = await response.json() as ForgeResponse<Description>
+			if (forgeResponse.success) {
+				this.output = forgeResponse.output
 			}
+			return forgeResponse
 		} catch (e) {
-			return ERROR_TEXT
+			return { success: false, error: ERROR_TEXT }
 		}
-	}
-}
-
-type Image = {
-	imageUrl: string
-}
-
-export class MuseImage extends MuseObject<ImageOptions, Image> {
-	constructor(input: ImageOptions) {
-		super(input)
-	}
-
-	protected validate(): string {
-		return "Not implemented!"
-	}
-
-	async generate(): Promise<this | string> {
-		const error = this.validate()
-		if (error) {
-			return error
-		}
-		return "Not implemented!"
 	}
 }
