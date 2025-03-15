@@ -2,10 +2,6 @@ declare const __API_URL__: string
 
 const ERROR_TEXT = "An error occured while generating!"
 
-export type ForgeResponse<T> =
-	| { success: true, output: T }
-	| { success: false, error: string }
-
 export abstract class ForgeObject<I, O> {
 	input: I
 	output!: O
@@ -40,7 +36,7 @@ export class ForgeNames extends ForgeObject<NamesOptions, Names> {
 	}
 
 	private prompt(): string {
-		return `Generate ${this.input.quantity} newline-separated random name(s) for a {${this.input.type}} in the {${this.input.genre}} genre.`
+		return `Generate ${this.input.quantity} name(s) for a {${this.input.type}} in the {${this.input.genre}} genre.`
 	}
 
 	async generate(): Promise<ForgeResponse<Names>> {
@@ -49,14 +45,17 @@ export class ForgeNames extends ForgeObject<NamesOptions, Names> {
 			return { success: false, error }
 		}
 
-		const data = {
+		const data: NamesRequest = {
 			prompt: this.prompt()
 		}
 
 		try {
 			const response = await fetch(__API_URL__ + "/forge/names", {
 				method: "POST",
-				headers: { auth: localStorage.getItem("auth") ?? "", },
+				headers: {
+					auth: localStorage.getItem("auth") ?? "",
+					"Content-Type": "application/json"
+				},
 				body: JSON.stringify(data),
 				signal: AbortSignal.timeout(10000)
 			})
@@ -116,14 +115,17 @@ export class ForgeDescription extends ForgeObject<DescriptionOptions, Descriptio
 			return { success: false, error }
 		}
 
-		const data = {
+		const data: DescriptionRequest = {
 			prompt: this.prompt()
 		}
 
 		try {
 			const response = await fetch(__API_URL__ + "/forge/description", {
 				method: "POST",
-				headers: { auth: localStorage.getItem("auth") ?? "", },
+				headers: {
+					auth: localStorage.getItem("auth") ?? "",
+					"Content-Type": "application/json"
+				},
 				body: JSON.stringify(data),
 				signal: AbortSignal.timeout(10000)
 			})

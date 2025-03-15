@@ -11,6 +11,10 @@ declare global {
 		gender: string
 	}
 
+	type NamesRequest = {
+		prompt: string
+	}
+
 	type Description = {
 		description: string
 	}
@@ -22,6 +26,14 @@ declare global {
 		length: "short" | "medium" | "extensive"
 		notes: string
 	}
+
+	type DescriptionRequest = {
+		prompt: string
+	}
+
+	type ForgeResponse<T> =
+		| { success: true, output: T }
+		| { success: false, error: string }
 }
 
 export { }
