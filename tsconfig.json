@@ -1,0 +1,13 @@
+{
+	"$schema": "https://json.schemastore.org/tsconfig.json",
+	"compilerOptions": {
+		"noImplicitOverride": true,
+		"lib": [
+			"ES2020",
+			"DOM",
+		]
+	},
+	"include": [
+		"**/*.ts"
+	]
+}

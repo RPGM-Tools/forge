@@ -1,2 +1,2 @@
-export * from './src/Forge'
+export * from './src'
 export * from './data/Descriptions'
