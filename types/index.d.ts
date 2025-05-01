@@ -20,9 +20,7 @@ declare global {
 		auth_token: string
 	}
 
-	type Names = {
-		names: string[]
-	}
+	type Names = string[]
 
 	type NamesOptions = {
 		quantity: number
@@ -36,9 +34,7 @@ declare global {
 		prompt: string
 	}
 
-	type Description = {
-		description: string
-	}
+	type Description = string
 
 	type DescriptionOptions = {
 		name: string

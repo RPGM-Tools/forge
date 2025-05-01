@@ -21,7 +21,7 @@ export class ForgeDescription implements ForgeObject<DescriptionOptions, Descrip
 
 	private prompt(): string {
 		var prompt = ''
-		prompt += `I would like a description for a(n) {${this.input.type}}.\n`
+		prompt += `I would like a description for a(n) {${this.input.type.toLowerCase()}}.\n`
 		switch (this.input.length) {
 			case "short" as const:
 				prompt += `The description should be a short blurb, up to 4 sentences.\n`
