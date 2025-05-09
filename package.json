@@ -4,5 +4,8 @@
 	"main": "index.ts",
 	"license": "MIT",
 	"author": "dallenb4",
-	"description": "AI-Powered content generation for TTRPGS"
+	"description": "AI-Powered content generation for TTRPGS",
+	"devDependencies": {
+		"@types/json-schema": "^7.0.15"
+	}
 }

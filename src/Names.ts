@@ -55,7 +55,7 @@ export class ForgeNames implements ForgeObject<NamesOptions, Names> {
 				this.output = forgeResponse.output
 			return forgeResponse
 		} catch (e) {
-			return { success: false, error: "" }
+			return { success: false, error: "An error occured while generating!" }
 		}
 	}
 }

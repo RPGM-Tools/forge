@@ -1,7 +1,13 @@
+import { JSONSchema7 } from "json-schema"
+
 declare global {
 	/** The api endpoint that Forge should query for generating
 	 *	- Should be set at build time */
 	const __API_URL__: string
+
+	type ForgeAuth = {
+		auth_token: string
+	}
 
 	interface ForgeObject<I, O> {
 		/** The input options used to create this ForgeObject */
@@ -16,9 +22,9 @@ declare global {
 		generate(forgeAuth: ForgeAuth): Promise<ForgeResponse<O>>
 	}
 
-	type ForgeAuth = {
-		auth_token: string
-	}
+	type ForgeResponse<T> =
+		| { success: true, output: T }
+		| { success: false, error: string }
 
 	type Names = string[]
 
@@ -48,9 +54,39 @@ declare global {
 		prompt: string
 	}
 
-	type ForgeResponse<T> =
-		| { success: true, output: T }
-		| { success: false, error: string }
+	/**
+	 *	
+	 */
+	type HomebrewOptions = {
+		name: string
+		custom_name?: string
+		fields: HomebrewField[]
+	}
+
+	type HomebrewRequest = {
+		prompt: string
+		homebrew: JSONSchema7
+	}
+
+	type HomebrewResponse = {
+		name: string
+		flavor_text: string
+		fields: { [key: string]: string | number | boolean }
+	}
+
+	type HomebrewField = {
+		name: string
+		type: "string" | "number" | "boolean"
+		description: string
+		value?: string | number | boolean
+	}
+
+	type Homebrew = {
+		name: string
+		custom_name: string
+		flavor_text: string
+		fields: HomebrewField[]
+	}
 }
 
 export { }

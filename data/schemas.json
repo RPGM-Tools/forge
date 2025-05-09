@@ -1,0 +1,2407 @@
+[
+	{
+		"name": "Ability",
+		"fields": [
+			{
+				"name": "Effects",
+				"type": "string",
+				"description": "Description of what the ability does or its effects"
+			},
+			{
+				"name": "Modifiers",
+				"type": "string",
+				"description": "Any modifiers or bonuses granted by the ability"
+			},
+			{
+				"name": "Usage/Mechanics",
+				"type": "string",
+				"description": "How the ability is activated or used, including mechanics"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Background or story associated with the ability"
+			}
+		]
+	},
+	{
+		"name": "Action",
+		"fields": [
+			{
+				"name": "Cost",
+				"type": "string",
+				"description": "Resource or cost to perform the action"
+			},
+			{
+				"name": "Range",
+				"type": "string",
+				"description": "Effective range or distance of the action"
+			},
+			{
+				"name": "Target",
+				"type": "string",
+				"description": "The target(s) of the action"
+			},
+			{
+				"name": "Effects",
+				"type": "string",
+				"description": "Outcomes or impacts of the action"
+			},
+			{
+				"name": "Cooldown/Limitations",
+				"type": "string",
+				"description": "Any limitations or cooldown periods"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Background or narrative context"
+			}
+		]
+	},
+	{
+		"name": "Armor",
+		"fields": [
+			{
+				"name": "Armor Type",
+				"type": "string",
+				"description": "Classification (e.g., light, medium, heavy, etc.)"
+			},
+			{
+				"name": "Weight",
+				"type": "number",
+				"description": "Weight of the armor"
+			},
+			{
+				"name": "Value/Cost",
+				"type": "number",
+				"description": "Monetary or resource value"
+			},
+			{
+				"name": "Armor Class Bonus",
+				"type": "number",
+				"description": "Bonus to defense or protection rating"
+			},
+			{
+				"name": "Strength Requirement",
+				"type": "number",
+				"description": "Minimum strength needed to wear effectively"
+			},
+			{
+				"name": "Stealth Disadvantage",
+				"type": "boolean",
+				"description": "Whether the armor imposes disadvantage on stealth"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Historical or narrative background"
+			}
+		]
+	},
+	{
+		"name": "Artifact",
+		"fields": [
+			{
+				"name": "Historical Background",
+				"type": "string",
+				"description": "History or origin story"
+			},
+			{
+				"name": "Powers/Abilities",
+				"type": "string",
+				"description": "Magical or special abilities"
+			},
+			{
+				"name": "Attunement Requirements",
+				"type": "string",
+				"description": "Any requirements to use or wield the artifact"
+			},
+			{
+				"name": "Charges/Uses",
+				"type": "number",
+				"description": "Number of uses or charges, if applicable"
+			},
+			{
+				"name": "Weaknesses/Destruction Conditions",
+				"type": "string",
+				"description": "Conditions under which the artifact might fail or be destroyed"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Narrative background or myths"
+			}
+		]
+	},
+	{
+		"name": "Background",
+		"fields": [
+			{
+				"name": "Skill Proficiencies",
+				"type": "string",
+				"description": "Relevant skills associated with the background"
+			},
+			{
+				"name": "Tool Proficiencies",
+				"type": "string",
+				"description": "Any tool or craft proficiencies"
+			},
+			{
+				"name": "Languages",
+				"type": "string",
+				"description": "Languages known or spoken"
+			},
+			{
+				"name": "Starting Equipment",
+				"type": "string",
+				"description": "Initial items or equipment provided"
+			},
+			{
+				"name": "Special Features",
+				"type": "string",
+				"description": "Unique abilities or benefits"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Historical or narrative context"
+			}
+		]
+	},
+	{
+		"name": "Boss",
+		"fields": [
+			{
+				"name": "Special Abilities",
+				"type": "string",
+				"description": "Unique or signature abilities"
+			},
+			{
+				"name": "Actions",
+				"type": "string",
+				"description": "Actions the boss can take"
+			},
+			{
+				"name": "Legendary Actions",
+				"type": "string",
+				"description": "Special actions available outside normal turns"
+			},
+			{
+				"name": "Lair or Environment",
+				"type": "string",
+				"description": "Description of the boss's surroundings"
+			},
+			{
+				"name": "Lair Actions/Regional Effects",
+				"type": "string",
+				"description": "Effects caused by the boss’s presence or lair"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Background story or narrative significance"
+			}
+		]
+	},
+	{
+		"name": "Building",
+		"fields": [
+			{
+				"name": "Building Type",
+				"type": "string",
+				"description": "E.g., castle, shop, keep, etc."
+			},
+			{
+				"name": "Occupants/Usage",
+				"type": "string",
+				"description": "Who uses the building and for what purpose"
+			},
+			{
+				"name": "Location",
+				"type": "string",
+				"description": "Where the building is situated"
+			},
+			{
+				"name": "History",
+				"type": "string",
+				"description": "Background or historical significance"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Narrative or anecdotal information"
+			}
+		]
+	},
+	{
+		"name": "Class",
+		"fields": [
+			{
+				"name": "Hit Dice",
+				"type": "string",
+				"description": "Type of dice used for health determination"
+			},
+			{
+				"name": "Primary Ability",
+				"type": "string",
+				"description": "The main ability score used"
+			},
+			{
+				"name": "Saving Throw Proficiencies",
+				"type": "string",
+				"description": "Key saving throws for the class"
+			},
+			{
+				"name": "Armor & Weapon Proficiencies",
+				"type": "string",
+				"description": "Types of armor and weapons the class is proficient with"
+			},
+			{
+				"name": "Skill Proficiencies",
+				"type": "string",
+				"description": "Suggested skills for the class"
+			},
+			{
+				"name": "Class Features/Special Abilities",
+				"type": "string",
+				"description": "Unique traits or abilities"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Historical or thematic background"
+			}
+		]
+	},
+	{
+		"name": "Condition",
+		"fields": [
+			{
+				"name": "Duration",
+				"type": "string",
+				"description": "How long the condition lasts"
+			},
+			{
+				"name": "Remedies or Cures",
+				"type": "string",
+				"description": "Possible cures or ways to mitigate the condition"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Any background or narrative context"
+			}
+		]
+	},
+	{
+		"name": "Contract",
+		"fields": [
+			{
+				"name": "Parties Involved",
+				"type": "string",
+				"description": "Who is involved in the contract"
+			},
+			{
+				"name": "Conditions/Obligations",
+				"type": "string",
+				"description": "Specific obligations or conditions"
+			},
+			{
+				"name": "Rewards or Penalties",
+				"type": "string",
+				"description": "Incentives or consequences"
+			},
+			{
+				"name": "Duration/Expiry",
+				"type": "string",
+				"description": "Timeframe for the contract"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Historical or narrative background"
+			}
+		]
+	},
+	{
+		"name": "Crafting Recipe",
+		"fields": [
+			{
+				"name": "List of Ingredients",
+				"type": "string",
+				"description": "All required ingredients"
+			},
+			{
+				"name": "Final Product",
+				"type": "string",
+				"description": "The item or outcome produced"
+			},
+			{
+				"name": "Quantity Produced",
+				"type": "number",
+				"description": "Number of items produced per recipe"
+			},
+			{
+				"name": "Tools Required",
+				"type": "string",
+				"description": "Tools or equipment needed"
+			},
+			{
+				"name": "Time Required",
+				"type": "string",
+				"description": "How long the process takes"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Any narrative or historical context"
+			}
+		]
+	},
+	{
+		"name": "Creature",
+		"fields": [
+			{
+				"name": "Type/Subtype",
+				"type": "string",
+				"description": "Creature classification"
+			},
+			{
+				"name": "Alignment",
+				"type": "string",
+				"description": "Moral or ethical alignment"
+			},
+			{
+				"name": "Armor Class",
+				"type": "number",
+				"description": "Defensive rating"
+			},
+			{
+				"name": "Hit Points",
+				"type": "number",
+				"description": "Total hit points"
+			},
+			{
+				"name": "Speed",
+				"type": "string",
+				"description": "Movement capabilities (walking, flying, etc.)"
+			},
+			{
+				"name": "Ability Scores",
+				"type": "string",
+				"description": "Key ability scores or stats"
+			},
+			{
+				"name": "Skills",
+				"type": "string",
+				"description": "Relevant skills"
+			},
+			{
+				"name": "Senses",
+				"type": "string",
+				"description": "Perception abilities and senses"
+			},
+			{
+				"name": "Languages",
+				"type": "string",
+				"description": "Languages known"
+			},
+			{
+				"name": "Challenge Rating",
+				"type": "string",
+				"description": "Difficulty rating"
+			},
+			{
+				"name": "Special Abilities",
+				"type": "string",
+				"description": "Unique traits or abilities"
+			},
+			{
+				"name": "Actions",
+				"type": "string",
+				"description": "Actions available in combat or interactions"
+			},
+			{
+				"name": "Preferred Environment",
+				"type": "string",
+				"description": "Habitat or typical surroundings"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Background and narrative context"
+			}
+		]
+	},
+	{
+		"name": "Cult",
+		"fields": [
+			{
+				"name": "Associated Deity or Figure",
+				"type": "string",
+				"description": "Central deity or leader"
+			},
+			{
+				"name": "Location/Base of Operations",
+				"type": "string",
+				"description": "Where the cult is based"
+			},
+			{
+				"name": "Leader(s)",
+				"type": "string",
+				"description": "Key figures or leaders"
+			},
+			{
+				"name": "Membership/Recruitment Methods",
+				"type": "string",
+				"description": "How members join"
+			},
+			{
+				"name": "Rituals/Practices",
+				"type": "string",
+				"description": "Specific ceremonies or rituals"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Historical or narrative background"
+			}
+		]
+	},
+	{
+		"name": "Cultural Practice",
+		"fields": [
+			{
+				"name": "Origin/History",
+				"type": "string",
+				"description": "Background and origins"
+			},
+			{
+				"name": "Traditions/Rituals",
+				"type": "string",
+				"description": "Specific customs or rituals"
+			},
+			{
+				"name": "Associated Races or Regions",
+				"type": "string",
+				"description": "Who practices it and where"
+			},
+			{
+				"name": "Variations",
+				"type": "string",
+				"description": "Different versions or interpretations"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Narrative background"
+			}
+		]
+	},
+	{
+		"name": "Currency",
+		"fields": [
+			{
+				"name": "Value/Exchange Rate",
+				"type": "number",
+				"description": "Monetary value or rate"
+			},
+			{
+				"name": "Region of Use",
+				"type": "string",
+				"description": "Where it is used"
+			},
+			{
+				"name": "Material/Composition",
+				"type": "string",
+				"description": "What it is made of"
+			},
+			{
+				"name": "History/Evolution",
+				"type": "string",
+				"description": "Historical background"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Narrative context"
+			}
+		]
+	},
+	{
+		"name": "Curse",
+		"fields": [
+			{
+				"name": "Duration",
+				"type": "string",
+				"description": "How long the curse lasts"
+			},
+			{
+				"name": "Origin/Causes",
+				"type": "string",
+				"description": "How or why the curse came to be"
+			},
+			{
+				"name": "Remedies/Cures",
+				"type": "string",
+				"description": "Possible ways to lift the curse"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Historical or narrative background"
+			}
+		]
+	},
+	{
+		"name": "Deity",
+		"fields": [
+			{
+				"name": "Alignment",
+				"type": "string",
+				"description": "Moral or ethical alignment"
+			},
+			{
+				"name": "Domains",
+				"type": "string",
+				"description": "Spheres of influence"
+			},
+			{
+				"name": "Symbols/Icons",
+				"type": "string",
+				"description": "Visual symbols or emblems"
+			},
+			{
+				"name": "Worshippers/Clergy",
+				"type": "string",
+				"description": "Those who revere the deity"
+			},
+			{
+				"name": "Myths/Legends",
+				"type": "string",
+				"description": "Associated stories or myths"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Additional narrative background"
+			}
+		]
+	},
+	{
+		"name": "Disease",
+		"fields": [
+			{
+				"name": "Mode of Transmission",
+				"type": "string",
+				"description": "How it spreads"
+			},
+			{
+				"name": "Cure or Treatment",
+				"type": "string",
+				"description": "Possible cures or treatments"
+			},
+			{
+				"name": "Effects on Victims",
+				"type": "string",
+				"description": "Physical or mental impacts"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Narrative or historical background"
+			}
+		]
+	},
+	{
+		"name": "Drink",
+		"fields": [
+			{
+				"name": "Origin/Region",
+				"type": "string",
+				"description": "Where the drink comes from"
+			},
+			{
+				"name": "Effects",
+				"type": "string",
+				"description": "Any magical or physical effects"
+			},
+			{
+				"name": "Recipe/Ingredients",
+				"type": "string",
+				"description": "Key ingredients or preparation notes"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Historical or cultural context"
+			}
+		]
+	},
+	{
+		"name": "Encounter",
+		"fields": [
+			{
+				"name": "Type",
+				"type": "string",
+				"description": "Combat, social, environmental, etc."
+			},
+			{
+				"name": "Difficulty",
+				"type": "string",
+				"description": "Challenge level or intensity"
+			},
+			{
+				"name": "Involved Creatures or NPCs",
+				"type": "string",
+				"description": "Key participants"
+			},
+			{
+				"name": "Location",
+				"type": "string",
+				"description": "Where the encounter occurs"
+			},
+			{
+				"name": "Treasure or Rewards",
+				"type": "string",
+				"description": "Loot, rewards, or consequences"
+			},
+			{
+				"name": "Tactics/Strategy",
+				"type": "string",
+				"description": "Any strategic considerations"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Additional narrative context"
+			}
+		]
+	},
+	{
+		"name": "Event",
+		"fields": [
+			{
+				"name": "Event Type",
+				"type": "string",
+				"description": "E.g., festival, battle, natural disaster, etc."
+			},
+			{
+				"name": "Location",
+				"type": "string",
+				"description": "Where the event takes place"
+			},
+			{
+				"name": "Participants",
+				"type": "string",
+				"description": "Key figures or groups involved"
+			},
+			{
+				"name": "Consequences/Outcomes",
+				"type": "string",
+				"description": "Short- or long-term effects"
+			},
+			{
+				"name": "Date/Time Period",
+				"type": "string",
+				"description": "When the event occurs"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Narrative or historical background"
+			}
+		]
+	},
+	{
+		"name": "Faction",
+		"fields": [
+			{
+				"name": "Goals/Objectives",
+				"type": "string",
+				"description": "What the faction aims to achieve"
+			},
+			{
+				"name": "Methods/Strategies",
+				"type": "string",
+				"description": "How the faction pursues its goals"
+			},
+			{
+				"name": "Leadership Structure",
+				"type": "string",
+				"description": "Organization and key leaders"
+			},
+			{
+				"name": "Membership",
+				"type": "string",
+				"description": "Details about its members"
+			},
+			{
+				"name": "Allies and Enemies",
+				"type": "string",
+				"description": "Key relationships with other groups"
+			},
+			{
+				"name": "History/Evolution",
+				"type": "string",
+				"description": "Historical background and development"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Additional narrative context"
+			}
+		]
+	},
+	{
+		"name": "Feat",
+		"fields": [
+			{
+				"name": "Prerequisites",
+				"type": "string",
+				"description": "Any requirements needed"
+			},
+			{
+				"name": "Mechanical Effects/Bonuses",
+				"type": "string",
+				"description": "Specific in-game benefits"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Background or narrative context"
+			}
+		]
+	},
+	{
+		"name": "Festival",
+		"fields": [
+			{
+				"name": "Traditions/Activities",
+				"type": "string",
+				"description": "Key events and customs"
+			},
+			{
+				"name": "Location",
+				"type": "string",
+				"description": "Where the festival is held"
+			},
+			{
+				"name": "Time of Year/Date",
+				"type": "string",
+				"description": "When the festival occurs"
+			},
+			{
+				"name": "History/Significance",
+				"type": "string",
+				"description": "Historical background and importance"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Additional narrative context"
+			}
+		]
+	},
+	{
+		"name": "Familiar",
+		"fields": [
+			{
+				"name": "Type/Subtype",
+				"type": "string",
+				"description": "Classification of the familiar"
+			},
+			{
+				"name": "Alignment",
+				"type": "string",
+				"description": "Moral or ethical alignment"
+			},
+			{
+				"name": "Stats",
+				"type": "string",
+				"description": "Key statistics (e.g., health, speed)"
+			},
+			{
+				"name": "Special Abilities",
+				"type": "string",
+				"description": "Unique traits or powers"
+			},
+			{
+				"name": "Actions",
+				"type": "string",
+				"description": "Actions available for the familiar"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Background and narrative context"
+			}
+		]
+	},
+	{
+		"name": "Fauna",
+		"fields": [
+			{
+				"name": "Habitat",
+				"type": "string",
+				"description": "The natural environment"
+			},
+			{
+				"name": "Diet",
+				"type": "string",
+				"description": "Food preferences or habits"
+			},
+			{
+				"name": "Behavior/Ecology",
+				"type": "string",
+				"description": "Behavioral traits or ecological role"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Additional narrative context"
+			}
+		]
+	},
+	{
+		"name": "Flora",
+		"fields": [
+			{
+				"name": "Habitat/Environment",
+				"type": "string",
+				"description": "Natural growing conditions"
+			},
+			{
+				"name": "Properties",
+				"type": "string",
+				"description": "Any special attributes (medicinal, poisonous, etc.)"
+			},
+			{
+				"name": "Uses",
+				"type": "string",
+				"description": "Culinary, magical, or other applications"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Background or cultural significance"
+			}
+		]
+	},
+	{
+		"name": "Food",
+		"fields": [
+			{
+				"name": "Origin/Region",
+				"type": "string",
+				"description": "Where the food comes from"
+			},
+			{
+				"name": "Effects",
+				"type": "string",
+				"description": "Any benefits or drawbacks when consumed"
+			},
+			{
+				"name": "Recipe/Preparation",
+				"type": "string",
+				"description": "Basic preparation or ingredients"
+			},
+			{
+				"name": "Nutritional or Magical Attributes",
+				"type": "string",
+				"description": "Special properties or enhancements"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Historical or cultural context"
+			}
+		]
+	},
+	{
+		"name": "Gadget",
+		"fields": [
+			{
+				"name": "Category/Type",
+				"type": "string",
+				"description": "E.g., tech, cybernetic, etc."
+			},
+			{
+				"name": "Power Requirements or Energy Source",
+				"type": "string",
+				"description": "How it is powered"
+			},
+			{
+				"name": "Features/Specifications",
+				"type": "string",
+				"description": "Key technical details"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Background or narrative context"
+			}
+		]
+	},
+	{
+		"name": "Guild",
+		"fields": [
+			{
+				"name": "Type",
+				"type": "string",
+				"description": "E.g., thieves, mages, merchants, etc."
+			},
+			{
+				"name": "Location/Headquarters",
+				"type": "string",
+				"description": "Where the guild is based"
+			},
+			{
+				"name": "Leader/Founder",
+				"type": "string",
+				"description": "Key individual(s) in charge"
+			},
+			{
+				"name": "Membership/Structure",
+				"type": "string",
+				"description": "Organization details"
+			},
+			{
+				"name": "Services or Specialties",
+				"type": "string",
+				"description": "What the guild offers"
+			},
+			{
+				"name": "History",
+				"type": "string",
+				"description": "Background or founding story"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Additional narrative context"
+			}
+		]
+	},
+	{
+		"name": "Historical Event",
+		"fields": [
+			{
+				"name": "Time Period",
+				"type": "string",
+				"description": "When the event took place"
+			},
+			{
+				"name": "Effects/Consequences",
+				"type": "string",
+				"description": "Short- or long-term impacts"
+			},
+			{
+				"name": "Key Figures Involved",
+				"type": "string",
+				"description": "Important people or entities"
+			},
+			{
+				"name": "Causes and Outcomes",
+				"type": "string",
+				"description": "Background and resulting effects"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Additional narrative or historical context"
+			}
+		]
+	},
+	{
+		"name": "Holiday",
+		"fields": [
+			{
+				"name": "Traditions/Customs",
+				"type": "string",
+				"description": "Celebratory practices"
+			},
+			{
+				"name": "Date or Time Frame",
+				"type": "string",
+				"description": "When the holiday occurs"
+			},
+			{
+				"name": "Historical Origins",
+				"type": "string",
+				"description": "Background and founding history"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Additional cultural context"
+			}
+		]
+	},
+	{
+		"name": "Inn",
+		"fields": [
+			{
+				"name": "Type",
+				"type": "string",
+				"description": "E.g., tavern, lodging, etc."
+			},
+			{
+				"name": "Location",
+				"type": "string",
+				"description": "Where the inn is situated"
+			},
+			{
+				"name": "Owner/Manager",
+				"type": "string",
+				"description": "Key person in charge"
+			},
+			{
+				"name": "Items Available",
+				"type": "string",
+				"description": "Food, drinks, or services provided"
+			},
+			{
+				"name": "Hours of Operation",
+				"type": "string",
+				"description": "Business hours or availability"
+			},
+			{
+				"name": "History/Notable Events",
+				"type": "string",
+				"description": "Background or significant occurrences"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Additional narrative context"
+			}
+		]
+	},
+	{
+		"name": "Item",
+		"fields": [
+			{
+				"name": "Item Type or Category",
+				"type": "string",
+				"description": "Classification of the item"
+			},
+			{
+				"name": "Weight",
+				"type": "number",
+				"description": "How heavy the item is"
+			},
+			{
+				"name": "Value/Cost",
+				"type": "number",
+				"description": "Monetary or resource cost"
+			},
+			{
+				"name": "Properties/Attributes",
+				"type": "string",
+				"description": "Special features or qualities"
+			},
+			{
+				"name": "Usage/Mechanics",
+				"type": "string",
+				"description": "How the item is used"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Background or narrative context"
+			}
+		]
+	},
+	{
+		"name": "Landmark",
+		"fields": [
+			{
+				"name": "Type",
+				"type": "string",
+				"description": "E.g., monument, natural formation, etc."
+			},
+			{
+				"name": "Location",
+				"type": "string",
+				"description": "Where the landmark is found"
+			},
+			{
+				"name": "Significance/History",
+				"type": "string",
+				"description": "Historical or cultural importance"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Additional narrative context"
+			}
+		]
+	},
+	{
+		"name": "Language",
+		"fields": [
+			{
+				"name": "Speakers/Regions",
+				"type": "string",
+				"description": "Who speaks it and where"
+			},
+			{
+				"name": "Script/Alphabet",
+				"type": "string",
+				"description": "Writing system or characters used"
+			},
+			{
+				"name": "Sample Phrases",
+				"type": "string",
+				"description": "Example phrases or sentences"
+			},
+			{
+				"name": "Historical/Cultural Context",
+				"type": "string",
+				"description": "Background and evolution"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Additional narrative details"
+			}
+		]
+	},
+	{
+		"name": "Legend",
+		"fields": [
+			{
+				"name": "Characters Involved",
+				"type": "string",
+				"description": "Key figures in the legend"
+			},
+			{
+				"name": "Location(s)",
+				"type": "string",
+				"description": "Where the legend takes place"
+			},
+			{
+				"name": "Variations of the Tale",
+				"type": "string",
+				"description": "Different versions or interpretations"
+			},
+			{
+				"name": "Historical/Cultural Context",
+				"type": "string",
+				"description": "Background of the tale"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Additional narrative details"
+			}
+		]
+	},
+	{
+		"name": "Location",
+		"fields": [
+			{
+				"name": "Location Type",
+				"type": "string",
+				"description": "E.g., city, forest, dungeon, etc."
+			},
+			{
+				"name": "Region/Geography",
+				"type": "string",
+				"description": "Geographical setting"
+			},
+			{
+				"name": "Population or Inhabitants",
+				"type": "string",
+				"description": "Who or what resides there"
+			},
+			{
+				"name": "Notable Features",
+				"type": "string",
+				"description": "Landmarks or key characteristics"
+			},
+			{
+				"name": "History/Backstory",
+				"type": "string",
+				"description": "Historical background"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Additional narrative details"
+			}
+		]
+	},
+	{
+		"name": "Magic Item",
+		"fields": [
+			{
+				"name": "Item Type",
+				"type": "string",
+				"description": "E.g., weapon, trinket, accessory, etc."
+			},
+			{
+				"name": "Weight",
+				"type": "number",
+				"description": "How heavy the item is"
+			},
+			{
+				"name": "Value/Cost",
+				"type": "number",
+				"description": "Monetary or resource cost"
+			},
+			{
+				"name": "Properties/Bonuses",
+				"type": "string",
+				"description": "Special attributes or effects"
+			},
+			{
+				"name": "Attunement Requirements",
+				"type": "string",
+				"description": "Any prerequisites to use the item"
+			},
+			{
+				"name": "Charges/Uses",
+				"type": "number",
+				"description": "How many times it can be used"
+			},
+			{
+				"name": "Magical Properties",
+				"type": "string",
+				"description": "Specific magical effects"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Narrative background or myths"
+			}
+		]
+	},
+	{
+		"name": "Mount",
+		"fields": [
+			{
+				"name": "Speed/Movement Capabilities",
+				"type": "string",
+				"description": "How fast and in what ways it moves"
+			},
+			{
+				"name": "Capacity",
+				"type": "number",
+				"description": "How many riders or cargo it can carry"
+			},
+			{
+				"name": "Trainability",
+				"type": "string",
+				"description": "Ease of training or control"
+			},
+			{
+				"name": "Habitat or Preferred Terrain",
+				"type": "string",
+				"description": "Typical environment or biome"
+			},
+			{
+				"name": "Diet/Behavior",
+				"type": "string",
+				"description": "Feeding habits and temperament"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Additional narrative context"
+			}
+		]
+	},
+	{
+		"name": "Mythology",
+		"fields": [
+			{
+				"name": "Associated Deities or Figures",
+				"type": "string",
+				"description": "Key divine or legendary figures"
+			},
+			{
+				"name": "Creation Stories or Myths",
+				"type": "string",
+				"description": "Foundational narratives"
+			},
+			{
+				"name": "Important Myths/Legends",
+				"type": "string",
+				"description": "Other key stories"
+			},
+			{
+				"name": "Symbols/Imagery",
+				"type": "string",
+				"description": "Recurring motifs or icons"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Additional narrative context"
+			}
+		]
+	},
+	{
+		"name": "NPC",
+		"fields": [
+			{
+				"name": "Race",
+				"type": "string",
+				"description": "The character's species or background"
+			},
+			{
+				"name": "Class or Role",
+				"type": "string",
+				"description": "Occupation or function in the story"
+			},
+			{
+				"name": "Alignment",
+				"type": "string",
+				"description": "Moral or ethical alignment"
+			},
+			{
+				"name": "Stats (if applicable)",
+				"type": "string",
+				"description": "Relevant game statistics"
+			},
+			{
+				"name": "Ability Scores or Notable Traits",
+				"type": "string",
+				"description": "Key characteristics"
+			},
+			{
+				"name": "Skills and Proficiencies",
+				"type": "string",
+				"description": "Special talents or areas of expertise"
+			},
+			{
+				"name": "Senses and Languages",
+				"type": "string",
+				"description": "Perception, speech, and understanding"
+			},
+			{
+				"name": "Challenge Rating (if applicable)",
+				"type": "string",
+				"description": "Relative difficulty or power level"
+			},
+			{
+				"name": "Special Abilities or Actions",
+				"type": "string",
+				"description": "Unique traits or actions"
+			},
+			{
+				"name": "Background/Personal Story",
+				"type": "string",
+				"description": "Narrative backstory"
+			},
+			{
+				"name": "Faction Affiliation",
+				"type": "string",
+				"description": "Any group associations"
+			},
+			{
+				"name": "Attitude/Personality",
+				"type": "string",
+				"description": "General demeanor"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Additional narrative context"
+			}
+		]
+	},
+	{
+		"name": "Organization",
+		"fields": [
+			{
+				"name": "Organization Type",
+				"type": "string",
+				"description": "E.g., club, secret society, company, etc."
+			},
+			{
+				"name": "Location/Headquarters",
+				"type": "string",
+				"description": "Where the organization is based"
+			},
+			{
+				"name": "Leader/Hierarchy",
+				"type": "string",
+				"description": "Leadership structure"
+			},
+			{
+				"name": "Membership Details",
+				"type": "string",
+				"description": "Who belongs and in what numbers"
+			},
+			{
+				"name": "Allies and Enemies",
+				"type": "string",
+				"description": "Other groups with which it interacts"
+			},
+			{
+				"name": "History/Evolution",
+				"type": "string",
+				"description": "Background and development over time"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Additional narrative context"
+			}
+		]
+	},
+	{
+		"name": "Plane",
+		"fields": [
+			{
+				"name": "Inhabitants",
+				"type": "string",
+				"description": "Who or what resides there"
+			},
+			{
+				"name": "Alignment or Cosmic Theme",
+				"type": "string",
+				"description": "Underlying moral or thematic tone"
+			},
+			{
+				"name": "Magical or Physical Properties",
+				"type": "string",
+				"description": "Special characteristics of the plane"
+			},
+			{
+				"name": "Access or Entry Requirements",
+				"type": "string",
+				"description": "How to enter or travel within it"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Additional narrative context"
+			}
+		]
+	},
+	{
+		"name": "Plot Hook",
+		"fields": [
+			{
+				"name": "Type or Theme",
+				"type": "string",
+				"description": "E.g., mystery, adventure, conflict"
+			},
+			{
+				"name": "Suggested Location",
+				"type": "string",
+				"description": "Where the hook might take place"
+			},
+			{
+				"name": "Involved Parties/Participants",
+				"type": "string",
+				"description": "Key figures or factions"
+			},
+			{
+				"name": "Reward or Consequences",
+				"type": "string",
+				"description": "Incentives or potential outcomes"
+			},
+			{
+				"name": "Complications/Potential Twists",
+				"type": "string",
+				"description": "Plot twists or uncertainties"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Additional narrative context"
+			}
+		]
+	},
+	{
+		"name": "Poem",
+		"fields": [
+			{
+				"name": "Text/Body of the Poem",
+				"type": "string",
+				"description": "The full text of the poem"
+			},
+			{
+				"name": "Author or Attributed Figure",
+				"type": "string",
+				"description": "Who wrote or is associated with the poem"
+			},
+			{
+				"name": "Origin or Inspiration",
+				"type": "string",
+				"description": "Background on its creation"
+			},
+			{
+				"name": "Significance/Interpretations",
+				"type": "string",
+				"description": "Meaning or cultural impact"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Additional narrative context"
+			}
+		]
+	},
+	{
+		"name": "Poison",
+		"fields": [
+			{
+				"name": "Effects on Target(s)",
+				"type": "string",
+				"description": "What the poison does"
+			},
+			{
+				"name": "Method of Delivery",
+				"type": "string",
+				"description": "How the poison is administered"
+			},
+			{
+				"name": "Antidote or Treatment",
+				"type": "string",
+				"description": "Possible cures or remedies"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Historical or narrative context"
+			}
+		]
+	},
+	{
+		"name": "Potion",
+		"fields": [
+			{
+				"name": "Magical or Mundane Effects",
+				"type": "string",
+				"description": "What the potion does"
+			},
+			{
+				"name": "Method of Delivery/Consumption",
+				"type": "string",
+				"description": "How it is administered or consumed"
+			},
+			{
+				"name": "Recipe or Ingredients (optional)",
+				"type": "string",
+				"description": "Basic formulation details"
+			},
+			{
+				"name": "Duration of Effects",
+				"type": "string",
+				"description": "How long its effects last"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Narrative or historical context"
+			}
+		]
+	},
+	{
+		"name": "Profession",
+		"fields": [
+			{
+				"name": "Required Skills or Training",
+				"type": "string",
+				"description": "What is needed to pursue this profession"
+			},
+			{
+				"name": "Typical Equipment",
+				"type": "string",
+				"description": "Common tools or items used"
+			},
+			{
+				"name": "Common Demographics",
+				"type": "string",
+				"description": "Who typically practices this profession"
+			},
+			{
+				"name": "Historical Context or Evolution",
+				"type": "string",
+				"description": "Background on how the profession developed"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Additional narrative context"
+			}
+		]
+	},
+	{
+		"name": "Prophecy",
+		"fields": [
+			{
+				"name": "Text/Statement",
+				"type": "string",
+				"description": "The actual prophetic text"
+			},
+			{
+				"name": "Possible Interpretations",
+				"type": "string",
+				"description": "Different ways to understand it"
+			},
+			{
+				"name": "Fulfillment Conditions or Timeline",
+				"type": "string",
+				"description": "Conditions or timing for fulfillment"
+			},
+			{
+				"name": "Historical or Cultural Context",
+				"type": "string",
+				"description": "Background surrounding the prophecy"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Additional narrative details"
+			}
+		]
+	},
+	{
+		"name": "Puzzle",
+		"fields": [
+			{
+				"name": "Solution",
+				"type": "string",
+				"description": "The correct answer or method to solve"
+			},
+			{
+				"name": "Reward for Completion",
+				"type": "string",
+				"description": "Incentives for solving the puzzle"
+			},
+			{
+				"name": "Location or Context",
+				"type": "string",
+				"description": "Where the puzzle is found or used"
+			},
+			{
+				"name": "Difficulty Level",
+				"type": "string",
+				"description": "Relative challenge rating"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Narrative background or historical context"
+			}
+		]
+	},
+	{
+		"name": "Quest",
+		"fields": [
+			{
+				"name": "Quest Type",
+				"type": "string",
+				"description": "E.g., fetch, rescue, investigation"
+			},
+			{
+				"name": "Objectives/Tasks",
+				"type": "string",
+				"description": "The specific goals to be accomplished"
+			},
+			{
+				"name": "Rewards/Incentives",
+				"type": "string",
+				"description": "Benefits or loot provided"
+			},
+			{
+				"name": "Quest Giver",
+				"type": "string",
+				"description": "Who offers the quest"
+			},
+			{
+				"name": "Location or Area",
+				"type": "string",
+				"description": "Where the quest takes place"
+			},
+			{
+				"name": "Prerequisites/Conditions",
+				"type": "string",
+				"description": "Any requirements to start the quest"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Additional narrative context"
+			}
+		]
+	},
+	{
+		"name": "Race",
+		"fields": [
+			{
+				"name": "Racial Traits",
+				"type": "string",
+				"description": "Unique abilities or characteristics"
+			},
+			{
+				"name": "Abilities or Bonuses",
+				"type": "string",
+				"description": "Mechanical or narrative advantages"
+			},
+			{
+				"name": "Typical Age or Lifespan",
+				"type": "string",
+				"description": "General life expectancy"
+			},
+			{
+				"name": "Alignment or Cultural Tendencies",
+				"type": "string",
+				"description": "Common moral or social traits"
+			},
+			{
+				"name": "Size and Speed",
+				"type": "string",
+				"description": "Physical characteristics and mobility"
+			},
+			{
+				"name": "Languages",
+				"type": "string",
+				"description": "Languages commonly spoken"
+			},
+			{
+				"name": "History/Evolution",
+				"type": "string",
+				"description": "Background and development over time"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Additional narrative context"
+			}
+		]
+	},
+	{
+		"name": "Relic",
+		"fields": [
+			{
+				"name": "Powers or Magical Effects",
+				"type": "string",
+				"description": "Special abilities or effects"
+			},
+			{
+				"name": "Origin or Provenance",
+				"type": "string",
+				"description": "Historical or narrative origin"
+			},
+			{
+				"name": "Current Location or Custodian",
+				"type": "string",
+				"description": "Where the relic is kept"
+			},
+			{
+				"name": "Historical Significance",
+				"type": "string",
+				"description": "Background importance"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Additional narrative context"
+			}
+		]
+	},
+	{
+		"name": "Ritual",
+		"fields": [
+			{
+				"name": "Purpose",
+				"type": "string",
+				"description": "The intended effect or goal"
+			},
+			{
+				"name": "Step-by-Step Procedure",
+				"type": "string",
+				"description": "Detailed instructions or phases"
+			},
+			{
+				"name": "Materials/Components Needed",
+				"type": "string",
+				"description": "Items required to perform the ritual"
+			},
+			{
+				"name": "Duration",
+				"type": "string",
+				"description": "How long the ritual takes"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Historical or narrative background"
+			}
+		]
+	},
+	{
+		"name": "Rumor",
+		"fields": [
+			{
+				"name": "Source(s) or Origin",
+				"type": "string",
+				"description": "Where the rumor originated"
+			},
+			{
+				"name": "Variations/Conflicting Accounts",
+				"type": "string",
+				"description": "Different versions or perspectives"
+			},
+			{
+				"name": "Impact on the World or Characters",
+				"type": "string",
+				"description": "How it affects the narrative"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Additional narrative context"
+			}
+		]
+	},
+	{
+		"name": "Secret Society",
+		"fields": [
+			{
+				"name": "Goals/Objectives",
+				"type": "string",
+				"description": "What the society aims to achieve"
+			},
+			{
+				"name": "Symbols or Emblems",
+				"type": "string",
+				"description": "Visual identifiers"
+			},
+			{
+				"name": "Membership/Initiation Requirements",
+				"type": "string",
+				"description": "How one joins the society"
+			},
+			{
+				"name": "History/Notable Acts",
+				"type": "string",
+				"description": "Key historical actions or events"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Additional narrative context"
+			}
+		]
+	},
+	{
+		"name": "Setting",
+		"fields": [
+			{
+				"name": "World History",
+				"type": "string",
+				"description": "Historical background"
+			},
+			{
+				"name": "Geography/Climate",
+				"type": "string",
+				"description": "Physical and environmental details"
+			},
+			{
+				"name": "Prominent Factions or Powers",
+				"type": "string",
+				"description": "Key groups within the setting"
+			},
+			{
+				"name": "Cultural Themes",
+				"type": "string",
+				"description": "Dominant cultural or societal motifs"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Additional narrative context"
+			}
+		]
+	},
+	{
+		"name": "Settlement",
+		"fields": [
+			{
+				"name": "Settlement Type",
+				"type": "string",
+				"description": "E.g., city, town, village, etc."
+			},
+			{
+				"name": "Population/Demographics",
+				"type": "string",
+				"description": "Who lives there and in what numbers"
+			},
+			{
+				"name": "Dominant Races or Cultures",
+				"type": "string",
+				"description": "Primary inhabitants"
+			},
+			{
+				"name": "Services and Amenities",
+				"type": "string",
+				"description": "Key facilities available"
+			},
+			{
+				"name": "Government/Defense Structure",
+				"type": "string",
+				"description": "Administrative and security details"
+			},
+			{
+				"name": "History/Founding",
+				"type": "string",
+				"description": "Background and origin story"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Additional narrative context"
+			}
+		]
+	},
+	{
+		"name": "Shop",
+		"fields": [
+			{
+				"name": "Shop Type",
+				"type": "string",
+				"description": "E.g., general goods, specialty store, etc."
+			},
+			{
+				"name": "Location",
+				"type": "string",
+				"description": "Where the shop is located"
+			},
+			{
+				"name": "Owner/Proprietor",
+				"type": "string",
+				"description": "Key person in charge"
+			},
+			{
+				"name": "Items Available/Inventory",
+				"type": "string",
+				"description": "Types of products sold"
+			},
+			{
+				"name": "Services Offered",
+				"type": "string",
+				"description": "Additional services provided"
+			},
+			{
+				"name": "Hours of Operation",
+				"type": "string",
+				"description": "Business hours"
+			},
+			{
+				"name": "History",
+				"type": "string",
+				"description": "Background or notable events"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Additional narrative context"
+			}
+		]
+	},
+	{
+		"name": "Sigil",
+		"fields": [
+			{
+				"name": "Meaning or Symbolism",
+				"type": "string",
+				"description": "What the sigil represents"
+			},
+			{
+				"name": "Origin or Usage Context",
+				"type": "string",
+				"description": "Background on its creation or application"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Additional narrative details"
+			}
+		]
+	},
+	{
+		"name": "Skill",
+		"fields": [
+			{
+				"name": "Associated Ability",
+				"type": "string",
+				"description": "Key attribute or ability it relies on"
+			},
+			{
+				"name": "Mechanics or Usage Guidelines",
+				"type": "string",
+				"description": "How the skill is performed or measured"
+			},
+			{
+				"name": "Examples of Application",
+				"type": "string",
+				"description": "Situations where the skill is used"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Historical or narrative background"
+			}
+		]
+	},
+	{
+		"name": "Song",
+		"fields": [
+			{
+				"name": "Lyrics/Text",
+				"type": "string",
+				"description": "The full lyrics or text"
+			},
+			{
+				"name": "Composer or Origin",
+				"type": "string",
+				"description": "Who wrote or is associated with the song"
+			},
+			{
+				"name": "Cultural Significance",
+				"type": "string",
+				"description": "Importance or impact in the setting"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Additional narrative context"
+			}
+		]
+	},
+	{
+		"name": "Spell",
+		"fields": [
+			{
+				"name": "Spell Level",
+				"type": "string",
+				"description": "The power level of the spell"
+			},
+			{
+				"name": "School of Magic",
+				"type": "string",
+				"description": "Magical tradition or school"
+			},
+			{
+				"name": "Casting Time",
+				"type": "string",
+				"description": "Time required to cast"
+			},
+			{
+				"name": "Range",
+				"type": "string",
+				"description": "Distance or area affected"
+			},
+			{
+				"name": "Components",
+				"type": "string",
+				"description": "Verbal, somatic, material, etc."
+			},
+			{
+				"name": "Duration",
+				"type": "string",
+				"description": "How long the spell lasts"
+			},
+			{
+				"name": "Applicable Classes",
+				"type": "string",
+				"description": "Which classes can use the spell"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Additional narrative or historical context"
+			}
+		]
+	},
+	{
+		"name": "Subclass",
+		"fields": [
+			{
+				"name": "Parent Class",
+				"type": "string",
+				"description": "The main class this subclass belongs to"
+			},
+			{
+				"name": "Special Features/Abilities",
+				"type": "string",
+				"description": "Unique traits or abilities"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Additional narrative context"
+			}
+		]
+	},
+	{
+		"name": "Symbol",
+		"fields": [
+			{
+				"name": "Meaning/Interpretation",
+				"type": "string",
+				"description": "What the symbol represents"
+			},
+			{
+				"name": "Origin/Usage Context",
+				"type": "string",
+				"description": "How and where it is used"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Additional narrative context"
+			}
+		]
+	},
+	{
+		"name": "Tavern",
+		"fields": [
+			{
+				"name": "Tavern Type",
+				"type": "string",
+				"description": "E.g., inn, pub, etc."
+			},
+			{
+				"name": "Location",
+				"type": "string",
+				"description": "Where the tavern is situated"
+			},
+			{
+				"name": "Owner/Management",
+				"type": "string",
+				"description": "Key individuals running the tavern"
+			},
+			{
+				"name": "Items Available",
+				"type": "string",
+				"description": "Food, drink, or services offered"
+			},
+			{
+				"name": "Services Offered",
+				"type": "string",
+				"description": "Additional amenities"
+			},
+			{
+				"name": "Hours of Operation",
+				"type": "string",
+				"description": "Business hours"
+			},
+			{
+				"name": "History/Local Reputation",
+				"type": "string",
+				"description": "Notable background or fame"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Additional narrative context"
+			}
+		]
+	},
+	{
+		"name": "Tome",
+		"fields": [
+			{
+				"name": "Physical Description",
+				"type": "string",
+				"description": "Details on the tome’s physical appearance"
+			},
+			{
+				"name": "Title",
+				"type": "string",
+				"description": "The title of the tome"
+			},
+			{
+				"name": "Language",
+				"type": "string",
+				"description": "The language the tome is written in"
+			},
+			{
+				"name": "Author",
+				"type": "string",
+				"description": "Who wrote or compiled the tome"
+			},
+			{
+				"name": "Size/Dimensions",
+				"type": "string",
+				"description": "Physical dimensions or weight"
+			},
+			{
+				"name": "Series",
+				"type": "string",
+				"description": "The series the tome belongs to, if any"
+			},
+			{
+				"name": "Volume",
+				"type": "string",
+				"description": "The volume number or installment"
+			},
+			{
+				"name": "Table of Contents",
+				"type": "string",
+				"description": "An outline of the tome's contents"
+			},
+			{
+				"name": "History/Provenance",
+				"type": "string",
+				"description": "Background on its origins and journey"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Additional narrative or historical context"
+			}
+		]
+	},
+	{
+		"name": "Tradition",
+		"fields": [
+			{
+				"name": "Origin or Cultural Roots",
+				"type": "string",
+				"description": "Background of its development"
+			},
+			{
+				"name": "Practices/Customs",
+				"type": "string",
+				"description": "Key rituals or customs"
+			},
+			{
+				"name": "Associated Groups or Regions",
+				"type": "string",
+				"description": "Who practices it and where"
+			},
+			{
+				"name": "Historical Context",
+				"type": "string",
+				"description": "Background information"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Additional narrative context"
+			}
+		]
+	},
+	{
+		"name": "Trap",
+		"fields": [
+			{
+				"name": "Trigger Conditions",
+				"type": "string",
+				"description": "What causes the trap to activate"
+			},
+			{
+				"name": "Effects/Damage",
+				"type": "string",
+				"description": "What happens when the trap is triggered"
+			},
+			{
+				"name": "Countermeasures or Disarm Methods",
+				"type": "string",
+				"description": "Ways to avoid or neutralize the trap"
+			},
+			{
+				"name": "Difficulty Rating",
+				"type": "string",
+				"description": "How challenging it is to overcome"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Additional narrative context"
+			}
+		]
+	},
+	{
+		"name": "Vehicle",
+		"fields": [
+			{
+				"name": "Vehicle Type",
+				"type": "string",
+				"description": "E.g., land, air, sea, etc."
+			},
+			{
+				"name": "Weight/Size",
+				"type": "string",
+				"description": "Physical dimensions or mass"
+			},
+			{
+				"name": "Value/Cost",
+				"type": "number",
+				"description": "Monetary or resource cost"
+			},
+			{
+				"name": "Speed/Movement",
+				"type": "string",
+				"description": "How fast or agile the vehicle is"
+			},
+			{
+				"name": "Capacity",
+				"type": "string",
+				"description": "How many can ride or be transported"
+			},
+			{
+				"name": "History/Provenance",
+				"type": "string",
+				"description": "Background or notable history"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Additional narrative context"
+			}
+		]
+	},
+	{
+		"name": "Weapon",
+		"fields": [
+			{
+				"name": "Weapon Type",
+				"type": "string",
+				"description": "E.g., melee, ranged, etc."
+			},
+			{
+				"name": "Weight",
+				"type": "number",
+				"description": "How heavy the weapon is"
+			},
+			{
+				"name": "Value/Cost",
+				"type": "number",
+				"description": "Monetary or resource cost"
+			},
+			{
+				"name": "Properties",
+				"type": "string",
+				"description": "Special features or attributes"
+			},
+			{
+				"name": "Damage",
+				"type": "string",
+				"description": "Damage output, including dice or flat values"
+			},
+			{
+				"name": "Range",
+				"type": "string",
+				"description": "Effective range (if applicable)"
+			},
+			{
+				"name": "Lore",
+				"type": "string",
+				"description": "Additional narrative context"
+			}
+		]
+	}
+]
