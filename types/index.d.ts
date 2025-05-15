@@ -54,9 +54,6 @@ declare global {
 		prompt: string
 	}
 
-	/**
-	 *	
-	 */
 	type HomebrewOptions = {
 		name: string
 		custom_name?: string
@@ -76,10 +73,17 @@ declare global {
 
 	type HomebrewField = {
 		name: string
-		type: "string" | "number" | "boolean"
 		description: string
-		value?: string | number | boolean
-	}
+	} & ({
+		type: "short" | "long"
+		value?: string
+	} | {
+		type: "boolean"
+		value?: boolean
+	} | {
+		type: "number"
+		value?: number
+	})
 
 	type Homebrew = {
 		name: string

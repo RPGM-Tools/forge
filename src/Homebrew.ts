@@ -16,15 +16,24 @@ export class ForgeHomebrew implements ForgeObject<HomebrewOptions, Homebrew> {
 		return ""
 	}
 
+	typeString(type: "short" | "long" | "number" | "boolean"): string {
+		switch (type) {
+			case "number": return type;
+			case "boolean": return type;
+			case "short": return "one sentence"
+			case "long": return "short paragraph"
+		}
+	}
+
 	prompt(): string {
-		const values = Object.entries(this.input.fields);
-		const hasSpecifiedAny = values.some(([_, v]) => v.value);
 		return [
 			`Generate a(n) ${this.input.name}`,
 			... this.input.custom_name ? [`The name of the thing being generated is ${this.input.custom_name}`]
 				: [`Generate the name for the ${this.input.name}`],
-			...hasSpecifiedAny ? [`I have already specified the following fields: ${this.input.fields
-				.map(v => `- "${v.name}": "${v.value}"`).join('\n ')}`] : [],
+			"Fields:\n",
+			this.input.fields
+				.map(f => `"${f.name}": (${this.typeString(f.type)}) = ${f.value === undefined || f.value === false ? "{generate}" : `"${f.value}"`}`)
+				.join("\n")
 		].join("\n");
 	}
 
@@ -36,7 +45,7 @@ export class ForgeHomebrew implements ForgeObject<HomebrewOptions, Homebrew> {
 			properties: {
 				name: {
 					title: "Name",
-					description: "The name of the thing being generated" + this.input.custom_name ? `, already specified: ${this.input.custom_name}.` : ".",
+					description: "The name of the thing being generated" + (this.input.custom_name ? `, already specified: ${this.input.custom_name}` : ""),
 					type: "string"
 				},
 				flavor_text: {
@@ -52,7 +61,7 @@ export class ForgeHomebrew implements ForgeObject<HomebrewOptions, Homebrew> {
 							obj[slugify(field.name)] = {
 								"title": field.name,
 								"description": field.description,
-								"type": field.type,
+								"type": field.type === "short" || field.type === "long" ? "string" : field.type,
 							}
 							return obj
 						}, {}),
@@ -97,9 +106,11 @@ export class ForgeHomebrew implements ForgeObject<HomebrewOptions, Homebrew> {
 			for (const field of this.input.fields) {
 				for (const [k, v] of Object.entries(forgeResponse.output.fields)) {
 					if (slugify(field.name) === k) {
+						// Type casting to make TS happy
 						this.output.fields.push({
 							...field,
-							value: v
+							type: field.type as "short",
+							value: v as string
 						})
 					}
 				}
