@@ -1,5 +1,15 @@
 [
 	{
+		"name": "Blank",
+		"fields": [
+			{
+				"name": "[Name]",
+				"type": "short",
+				"description": "[Description]"
+			}
+		]
+	},
+	{
 		"name": "Ability",
 		"fields": [
 			{
