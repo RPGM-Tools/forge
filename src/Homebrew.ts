@@ -27,11 +27,15 @@ export class ForgeHomebrew implements ForgeObject<HomebrewOptions, Homebrew> {
 
 	prompt(): string {
 		return [
-			`Generate a(n) ${this.input.name}`,
-			... this.input.custom_name ? [`The name of the thing being generated is ${this.input.custom_name}`]
-				: [`Generate the name for the ${this.input.name}`],
+			`Generate a(n) {${this.input.schema.name}}`,
+			...this.input.language ? [`Generate everything in the {${this.input.language}} language`] : [],
+			this.input.schema.custom_name ? `The name of the thing being generated is {${this.input.schema.custom_name}}`
+				: `Generate the name for the {${this.input.schema.name}}`,
+			this.input.system ? `Make sure your {${this.input.schema.name}} is compatible with {${this.input.system}} (a TTRPG system)`
+				: `Make sure your {${this.input.schema.name}} isn't tied to a specific system (e.g. Dungeons & Dragons or Pathfinder)`,
+			this.input.genre ? `Create the ${this.input.schema.name} in the {${this.input.genre}} genre` : "",
 			"Fields:\n",
-			this.input.fields
+			this.input.schema.fields
 				.map(f => `"${f.name}": (${this.typeString(f.type)}) = ${f.value === undefined || f.value === false ? "{generate}" : `"${f.value}"`}`)
 				.join("\n")
 		].join("\n");
@@ -39,13 +43,13 @@ export class ForgeHomebrew implements ForgeObject<HomebrewOptions, Homebrew> {
 
 	async generate(forgeAuth: ForgeAuth): Promise<ForgeResponse<Homebrew>> {
 		const schema: JSONSchema7 = {
-			title: this.input.name,
+			title: this.input.schema.name,
 			type: "object",
 			additionalProperties: false,
 			properties: {
 				name: {
 					title: "Name",
-					description: "The name of the thing being generated" + (this.input.custom_name ? `, already specified: ${this.input.custom_name}` : ""),
+					description: "The name of the thing being generated" + (this.input.schema.custom_name ? `, already specified: ${this.input.schema.custom_name}` : ""),
 					type: "string"
 				},
 				flavor_text: {
@@ -56,7 +60,7 @@ export class ForgeHomebrew implements ForgeObject<HomebrewOptions, Homebrew> {
 				fields: {
 					title: "Fields",
 					description: "The various fields to generate content for",
-					properties: Object.entries(this.input.fields)
+					properties: Object.entries(this.input.schema.fields)
 						.reduce((obj: { [key: string]: JSONSchema7Definition }, [, field]) => {
 							obj[slugify(field.name)] = {
 								"title": field.name,
@@ -66,7 +70,7 @@ export class ForgeHomebrew implements ForgeObject<HomebrewOptions, Homebrew> {
 							return obj
 						}, {}),
 					type: "object",
-					required: this.input.fields.map(f => slugify(f.name))
+					required: this.input.schema.fields.map(f => slugify(f.name))
 				}
 			},
 			required: ["name", "flavor_text", "fields"]
@@ -77,48 +81,46 @@ export class ForgeHomebrew implements ForgeObject<HomebrewOptions, Homebrew> {
 			homebrew: schema,
 		}
 
-		try {
-			const response = await fetch(__API_URL__ + "/forge/homebrew", {
-				method: "POST",
-				headers: {
-					auth: forgeAuth.auth_token,
-					"Content-Type": "application/json"
-				},
-				body: JSON.stringify(body),
-				signal: AbortSignal.timeout(10000)
-			})
-			if (response.status == 401) {
-				return { success: false, error: "Wrong API key!" }
-			}
-			const forgeResponse = await response.json() as ForgeResponse<HomebrewResponse>
+		const response = await fetch(__API_URL__ + "/forge/homebrew", {
+			method: "POST",
+			headers: {
+				auth: forgeAuth.auth_token,
+				"Content-Type": "application/json"
+			},
+			body: JSON.stringify(body),
+			signal: AbortSignal.timeout(10000)
+		})
+		if (response.status == 401) {
+			return { success: false, error: "Wrong API key!" }
+		} else if (response.status == 429) {
+			return { success: false, error: "Your quota has been exceeded. Upgrade your plan to generate more homebrew!" }
+		}
+		const forgeResponse = await response.json() as ForgeResponse<HomebrewResponse>
 
-			// We can cast this because it only contains an error
-			if (!forgeResponse.success) return forgeResponse as ForgeResponse<Homebrew>
+		// We can cast this because it only contains an error
+		if (!forgeResponse.success) return forgeResponse as ForgeResponse<Homebrew>
 
-			this.output = {
-				name: this.input.name,
-				custom_name: forgeResponse.output.name,
-				flavor_text: forgeResponse.output.flavor_text,
-				fields: []
-			}
+		this.output = {
+			name: this.input.schema.name,
+			custom_name: forgeResponse.output.name,
+			flavor_text: forgeResponse.output.flavor_text,
+			fields: []
+		}
 
-			// Regenerate the fields by matching the names
-			for (const field of this.input.fields) {
-				for (const [k, v] of Object.entries(forgeResponse.output.fields)) {
-					if (slugify(field.name) === k) {
-						// Type casting to make TS happy
-						this.output.fields.push({
-							...field,
-							type: field.type as "short",
-							value: v as string
-						})
-					}
+		// Regenerate the fields by matching the names
+		for (const field of this.input.schema.fields) {
+			for (const [k, v] of Object.entries(forgeResponse.output.fields)) {
+				if (slugify(field.name) === k) {
+					// Type casting to make TS happy
+					this.output.fields.push({
+						...field,
+						type: field.type as "short",
+						value: v as string
+					})
 				}
 			}
-			return { success: true, output: this.output }
-		} catch (e) {
-			return { success: false, error: "" }
 		}
+		return { success: true, output: this.output }
 	}
 }
 

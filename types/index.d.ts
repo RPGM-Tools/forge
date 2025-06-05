@@ -28,12 +28,16 @@ declare global {
 
 	type Names = string[]
 
+	type Method = "ai" | "simple";
+	type Gender = "male" | "female" | "neutral";
+
 	type NamesOptions = {
 		quantity: number
-		method: "ai" | "simple"
+		method: Method
 		type: string
 		genre: string
-		gender: string
+		gender: Gender
+		language: string
 	}
 
 	type NamesRequest = {
@@ -45,19 +49,28 @@ declare global {
 	type DescriptionOptions = {
 		name: string
 		type: string
-		style: string
+		genre: string
 		length: "short" | "medium" | "extensive"
+		system: string
 		notes: string
+		language: string
 	}
 
 	type DescriptionRequest = {
 		prompt: string
 	}
 
-	type HomebrewOptions = {
+	type HomebrewSchema = {
 		name: string
 		custom_name?: string
 		fields: HomebrewField[]
+	}
+
+	type HomebrewOptions = {
+		genre: string
+		system: string
+		language: string
+		schema: HomebrewSchema
 	}
 
 	type HomebrewRequest = {

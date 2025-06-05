@@ -7,7 +7,8 @@
 	"author": "dallenb4",
 	"description": "AI-Powered content generation for TTRPGS",
 	"devDependencies": {
-		"@types/json-schema": "^7.0.15"
+		"@types/json-schema": "^7.0.15",
+		"vite": "^6.3.5"
 	},
 	"type": "module"
 }

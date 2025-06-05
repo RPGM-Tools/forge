@@ -20,8 +20,11 @@ export class ForgeDescription implements ForgeObject<DescriptionOptions, Descrip
 	}
 
 	private prompt(): string {
-		var prompt = ''
+		let prompt = ''
 		prompt += `I would like a description for a(n) {${this.input.type.toLowerCase()}}.\n`
+		if (this.input.language) {
+			prompt += `Generate everything in the {${this.input.language}} language.\n`
+		}
 		switch (this.input.length) {
 			case "short" as const:
 				prompt += `The description should be a short blurb, up to 4 sentences.\n`
@@ -33,7 +36,12 @@ export class ForgeDescription implements ForgeObject<DescriptionOptions, Descrip
 				prompt += `The description should be long and detailed, up to 4 paragraphs of ~4 sentences each.\n`
 				break
 		}
-		prompt += `Make the description have a style of {${this.input.style}}\n`
+		prompt += `Create the description in the {${this.input.genre}} genre.\n`
+		if (this.input.system) {
+			prompt += `Make sure your description is compatible with {${this.input.system}} (a TTRPG system)\n`
+		} else {
+			prompt += `Make sure your description isn't tied to a specific system (e.g. Dungeons & Dragons or Pathfinder)\n`
+		}
 		if (this.input.name) {
 			prompt += `The name of it is {${this.input.name}}\n`
 		} else {
@@ -67,6 +75,8 @@ export class ForgeDescription implements ForgeObject<DescriptionOptions, Descrip
 			})
 			if (response.status == 401) {
 				return { success: false, error: "Wrong API key!" }
+			} else if (response.status == 429) {
+				return { success: false, error: "Your quota has been exceeded. Upgrade your plan to generate more descriptions!" }
 			}
 			const forgeResponse = await response.json() as ForgeResponse<Description>
 			if (forgeResponse.success) {
