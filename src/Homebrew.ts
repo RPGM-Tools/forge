@@ -13,6 +13,7 @@ export class ForgeHomebrew implements ForgeObject<HomebrewOptions, Homebrew> {
 	}
 
 	validate(): string {
+		this.input.schema.custom_name = this.input.schema.custom_name?.trim();
 		return ""
 	}
 
@@ -20,8 +21,8 @@ export class ForgeHomebrew implements ForgeObject<HomebrewOptions, Homebrew> {
 		switch (type) {
 			case "number": return type;
 			case "boolean": return type;
-			case "short": return "one sentence"
-			case "long": return "short paragraph"
+			case "short": return "two sentences"
+			case "long": return "three paragraphs"
 		}
 	}
 
@@ -49,7 +50,7 @@ export class ForgeHomebrew implements ForgeObject<HomebrewOptions, Homebrew> {
 			properties: {
 				name: {
 					title: "Name",
-					description: "The name of the thing being generated" + (this.input.schema.custom_name ? `, already specified: ${this.input.schema.custom_name}` : ""),
+					description: "The name of the thing being generated" + (this.input.schema.custom_name ? `, already specified: "${this.input.schema.custom_name}"` : ""),
 					type: "string"
 				},
 				flavor_text: {

@@ -62,7 +62,7 @@ declare global {
 
 	type HomebrewSchema = {
 		name: string
-		custom_name?: string
+		custom_name: string | undefined
 		fields: HomebrewField[]
 	}
 
