@@ -29,7 +29,7 @@ declare global {
 	type Names = string[]
 
 	type Method = "ai" | "simple";
-	type Gender = "male" | "female" | "neutral";
+	type Gender = "male" | "female" | "nonbinary" | "any";
 
 	type NamesOptions = {
 		quantity: number

@@ -30,10 +30,10 @@ export class ForgeNames implements ForgeObject<NamesOptions, Names> {
 			return "Type is empty!"
 		if (this.input.genre === "")
 			return "Genre is empty!"
-		if (this.input.gender === "male" || this.input.gender === "female" || this.input.gender === "neutral")
+		if (this.input.gender === "male" || this.input.gender === "female" || this.input.gender === "nonbinary" || this.input.gender === "any")
 			this.input.gender = this.input.gender
 		else
-			this.input.gender = "neutral"
+			this.input.gender = "any"
 		return ""
 	}
 
